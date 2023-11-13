@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Quiz</title>
+<meta charset="UTF-8">
+<script>
+function checkAnswers() {
+let score = 0;
+let q1 = document.quiz.question1.value;
+let q2 = document.quiz.question2.value;
+let q3 = document.quiz.question3.value;
+if (q1 == "correct") {
+score++;
+}
+if (q2 == "correct") {
+score++;
+}
+if (q3 == "correct") {
+score++;
+}
+//use getElementById("results") to select the element with the id "results."
+//use innerHTML to access the content of the selected element and store it in the content variable.
+document.getElementById("results").innerHTML = "You scored " + score + " out of 3."; 
+}
+</script>
+</head>
+<body>
+
+<h2>Simple Quiz</h2>
+
+<form name="quiz">
+<p>What is the capital of France?</p>
+<input type="radio" name="question1" value="wrong">London<br>
+<input type="radio" name="question1" value="wrong">New York<br>
+<input type="radio" name="question1" value="correct">Paris<br>
+
+<p>What is the largest planet in our solar system?</p>
+<input type="radio" name="question2" value="wrong">Earth<br>
+<input type="radio" name="question2" value="correct">Jupiter<br>
+<input type="radio" name="question2" value="wrong">Mars<br>
+
+<p>What is the highest mountain in the world?</p>
+<input type="radio" name="question3" value="wrong">Mount Kilimanjaro<br>
+<input type="radio" name="question3" value="correct">Mount Everest<br>
+<input type="radio" name="question3" value="wrong">Mount Fuji<br>
+
+<button type="button"
+onclick="checkAnswers()">Submit Quiz</button>
+
+<p id="results"></p>
+
+</form>
+ <p><a href="index.html">Back to Homepage</a></p>
+</body>
+</html>
